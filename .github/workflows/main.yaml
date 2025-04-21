@@ -43,7 +43,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        kata_name: ${{ fromJson(needs.ListKatas.outputs.tests) }}
+        kata_name: ${{ fromJson(needs.PreTestListKatas.outputs.tests) }}
     steps:
       - uses: actions/checkout@v4
       - name: unittest run
