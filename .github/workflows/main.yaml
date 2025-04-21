@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  LintTest:
+  PreTestLint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -21,7 +21,7 @@ jobs:
           pip install pylint
           pylint *.py || true
 
-  ListKatas:
+  PreTestListKatas:
     runs-on: ubuntu-latest
     outputs:
       tests: ${{ steps.kata_tests.outputs.tests }}
@@ -52,7 +52,7 @@ jobs:
           filename=${{ matrix.kata_name }}
           python -m unittest katas.test.test_${filename%.py}
 
-  StoreTestId:
+  PostTestStoreTestId:
     needs: Test
     runs-on: ubuntu-latest
     if: always()
