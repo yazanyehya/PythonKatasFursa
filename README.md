@@ -16,3 +16,4 @@ It refers to a detailed choreographed pattern of martial arts movements made to 
 
 You can enjoy a game map to see your progress: https://alonitac.github.io/PythonKatasFursa (to load your map, enter your GitHub account, your katas repo name, and click the **Load Map** button.)
 
+
