@@ -37,7 +37,7 @@ jobs:
           echo "tests=$kata_json" >> $GITHUB_OUTPUT
 
   Test:
-    needs: ListKatas
+    needs: PreTestListKatas
     runs-on: ubuntu-latest
     name: ${{ matrix.kata_name }}
     strategy:
