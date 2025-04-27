@@ -1,13 +1,11 @@
+
 def is_unique(string):
-    """
-    Checks if a string has all unique characters (case-insensitive).
+    letters = set()
+    for letter in string:
+        if letter in letters:
+            return False
+        letters.add(letter)
 
-    Args:
-        string: the input string
-
-    Returns:
-        True if all characters are unique, False otherwise
-    """
     return True
 
 
