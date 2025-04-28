@@ -1,13 +1,10 @@
 def count_true_values(array):
-    """
-    Counts the number of True values in the given boolean list.
+    count = 0
+    for value in array:
+        if value is True:
+            count+=1
+    return count
 
-    Args:
-        array: the boolean list to check
-
-    Returns:
-        the count of True values in the list
-    """
     return 0
 
 
