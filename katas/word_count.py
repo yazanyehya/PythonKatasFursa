@@ -1,14 +1,15 @@
 def count_words(sentence):
-    """
-    Counts the number of words in a given sentence.
+    is_word = False
+    count = 0
 
-    Args:
-        sentence: the input string (a sentence)
-
-    Returns:
-        the number of words in the sentence
-    """
-    return 0
+    for char in sentence:
+        if char.isalpha():
+            if not is_word:
+                count+=1
+                is_word=True
+        else:
+                is_word=False
+    return count
 
 
 if __name__ == '__main__':
