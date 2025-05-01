@@ -1,11 +1,13 @@
 def rotate_matrix(matrix):
-    """
-    Rotates the given square matrix 90 degrees clockwise in place.
+    n = len(matrix)
+    for i in range(n):
+        for j in range(i, n):
+            # Transpose the matrix
+            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
 
-    Args:
-        matrix: the 2D square matrix to rotate
-    """
-    pass
+    for row in matrix:
+        # Reverse each row
+        row.reverse()
 
 
 def print_matrix(matrix):
