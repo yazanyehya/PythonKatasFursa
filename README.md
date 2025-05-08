@@ -11,7 +11,6 @@ It refers to a detailed choreographed pattern of martial arts movements made to 
 > To pull the new katas that don't exist in your fork, execute the following **from branch `main`**:
 > 
 > ```bash 
-> #!/bin/bash
 > git remote add upstream https://github.com/alonitac/PythonKatasFursa.git 2>/dev/null
 > git fetch upstream
 > git merge upstream/main
