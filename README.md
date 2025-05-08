@@ -12,8 +12,7 @@ It refers to a detailed choreographed pattern of martial arts movements made to 
 > 
 > ```bash 
 > git remote add upstream https://github.com/alonitac/PythonKatasFursa.git 2>/dev/null
-> git fetch upstream
-> git merge upstream/main
+> git pull upstream main
 > ```
 
 1. **Fork** this repo, clone your forked repo and open in your preferred IDE (e.g. PyCharm).
