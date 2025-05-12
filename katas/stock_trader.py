@@ -1,16 +1,13 @@
 def max_profit(prices):
-    """
-    Finds the maximum profit that can be achieved by buying and selling the stock ONCE.
+    min_num=prices[0]
+    maximum_profit=0
+    n = len(prices)
+    for i in range (1,n):
+        maximum_profit=max(prices[i]-min_num,maximum_profit)
+        if prices[i] < min_num:
+            min_num=prices[i]
 
-    Aim for O(n)
-
-    Args:
-        prices: a list of prices on each day
-
-    Returns:
-        the maximum profit, or 0 if no profit can be achieved
-    """
-    return 0
+    return maximum_profit
 
 
 if __name__ == '__main__':
