@@ -1,28 +1,47 @@
+import collections
+
+from debian.debtags import output
+
+
 def max_sliding_window(nums, k):
-    """
-    Given an array of integers and a sliding window size, your task is to find the maximum value
-    in the window at each position as the window slides from left to right.
+    # slide = []
+    # j = k
+    # answer = []
+    # for i in range(len(nums)):
+    #     if j > 0 :
+    #         slide.append(nums[i])
+    #         j-=1
+    #     else :
+    #         answer.append(max(slide))
+    #         slide.append(nums[i])
+    #         slide.pop(0)
+    #
+    # answer.append(max(slide))
+    #
+    # return answer
+    if k <= 0 or k > len(nums):
+        raise ValueError("Window size k must be between 1 and len(nums)")
+    answer = []
+    q = collections.deque()
+    l = 0
 
-    For example, given the array [1, 3, -1, -3, 5, 3, 6, 7] and window size 3:
-    The output should be [3, 3, 5, 5, 6, 7].
+    for r in range(len(nums)):
+        # Remove from back if smaller than current
+        while q and nums[q[-1]] < nums[r]:
+            q.pop()
 
-    Window position                Max
-    ---------------               -----
-    [1  3  -1] -3  5  3  6  7       3
-     1 [3  -1  -3] 5  3  6  7       3
-     1  3 [-1  -3  5] 3  6  7       5
-     1  3  -1 [-3  5  3] 6  7       5
-     1  3  -1  -3 [5  3  6] 7       6
-     1  3  -1  -3  5 [3  6  7]      7
+        q.append(r)
 
-    Args:
-        nums: list of integers
-        k: the size of the sliding window
+        # Remove from front if out of window
+        if q[0] < l:
+            q.popleft()
 
-    Returns:
-        A list of the maximum values in each window
-    """
-    return []
+        # Record result when window is valid
+        if r - l + 1 >= k:
+            answer.append(nums[q[0]])
+            l += 1
+
+    return answer
 
 
 if __name__ == '__main__':
