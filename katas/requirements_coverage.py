@@ -1,6 +1,7 @@
 from typing import List
 
 
+
 def select_minimal_test_cases(test_cases: List[List[int]]) -> List[int]:
     """
     In software testing, it's often required to select a minimal set of test cases that cover all the requirements.
