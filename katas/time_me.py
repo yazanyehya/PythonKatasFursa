@@ -2,17 +2,10 @@ import time
 
 
 def measure_execution_time(func):
-    """
-    Measures the time it takes to execute a given function.
-
-    Args:
-        func: the function to measure
-
-    Returns:
-        the execution time in milliseconds
-    """
-    # hint: time.time()
-    return 0
+    start_time = time.time()
+    func()
+    end_time=time.time()
+    return (end_time-start_time)*1000
 
 
 def sample_function():
