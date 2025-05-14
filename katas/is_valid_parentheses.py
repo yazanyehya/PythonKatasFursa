@@ -1,21 +1,21 @@
 def is_valid_parentheses(s):
-    """
-    Checks if a given string has valid parentheses (try in O(n)).
-
-    A string has valid parentheses if:
-    1. Every opening parenthesis has a matching closing parenthesis.
-    2. The parentheses are correctly nested.
-
-    Args:
-        s: the input string containing parentheses
-
-    Returns:
-        True if the string has valid parentheses, False otherwise
-    """
-    # Hint for efficient implementation: stack
-    return False
-
-
+    temp = []
+    for i in range(len(s)):
+        if s[i] in '({[':
+            temp.append(s[i])
+        elif s[i] == ']' :
+            if not temp or temp[-1] != '[':
+                return False
+            temp.pop()
+        elif s[i] == '}' :
+            if not temp or temp[-1] != '{':
+                return False
+            temp.pop()
+        elif s[i] == ')' :
+            if not temp or temp[-1] != '(':
+                return False
+            temp.pop()
+    return not temp
 if __name__ == '__main__':
     valid_input = "()[]{}"
     invalid_input1 = "(]"
