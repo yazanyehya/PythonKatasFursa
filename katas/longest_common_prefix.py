@@ -1,14 +1,18 @@
 def longest_common_prefix(strs):
-    """
-    Finds the longest common prefix in a list of strings.
+    if not strs:
+        return ""
 
-    Args:
-        strs: the list of strings
+    result = []
+    temp = strs[0]
 
-    Returns:
-        the longest common prefix, or an empty string if none exists
-    """
-    return ""
+    for i in range(len(temp)):
+        char = temp[i]
+        for j in range(1, len(strs)):
+            if i >= len(strs[j]) or strs[j][i] != char:
+                return ''.join(result)
+        result.append(char)
+
+    return ''.join(result)
 
 
 if __name__ == '__main__':
